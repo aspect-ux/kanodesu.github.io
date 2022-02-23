@@ -1,0 +1,8 @@
+D:\programming\VSC#\CSharp练习\02\bin\Debug\02.exe.config
+D:\programming\VSC#\CSharp练习\02\bin\Debug\02.exe
+D:\programming\VSC#\CSharp练习\02\bin\Debug\02.pdb
+D:\programming\VSC#\CSharp练习\02\obj\Debug\02.csproj.AssemblyReference.cache
+D:\programming\VSC#\CSharp练习\02\obj\Debug\02.csproj.SuggestedBindingRedirects.cache
+D:\programming\VSC#\CSharp练习\02\obj\Debug\02.csproj.CoreCompileInputs.cache
+D:\programming\VSC#\CSharp练习\02\obj\Debug\02.exe
+D:\programming\VSC#\CSharp练习\02\obj\Debug\02.pdb
