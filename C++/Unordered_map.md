@@ -12,7 +12,7 @@
   
   unordered_map<string,int> hash;
   // use {{}} to create key and value
-  unordered_map<int,char> arr = {{'0','1'},
+  unordered_map<int,char> arr = {{0,'1'},
   {1,'2'},{2,'3'},{3,'4'},{4,'5'},{5,'6'},{6,'7'},{7,'8'},{8,'9'}}; 
   unordered_map<string,int>::iterator it;
   cout<<it->first<<it->second;
