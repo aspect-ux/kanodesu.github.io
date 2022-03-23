@@ -18,4 +18,10 @@
   cout<<it->first<<it->second;
   ```
 
+* `insert`
+
+  ```c++
+  map.insert({key:value});
+  ```
+
   
