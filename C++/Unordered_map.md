@@ -24,4 +24,13 @@
   map.insert({key:value});
   ```
 
-  
+* `find`
+
+  ```c++
+  if(hash.find(index)!= hash.end()) //找到
+  ```
+
+* 遍历
+
+  * 迭代器遍历
+  * `for(auto c in hash){}`
