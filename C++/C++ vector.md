@@ -30,5 +30,9 @@ v1.swap(v2)
 //排序
 sort(v.begin(),v.end());
 
+
+//插入
+v.insert(v.begin()+n,value);
+
 ```
 
