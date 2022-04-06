@@ -34,3 +34,10 @@
 
   * 迭代器遍历
   * `for(auto c in hash){}`
+  
+* `erase`
+
+  * `hash.erase(it.begin());`
+  * `hash.erase(it.begin(),it.begin()+2)`左开右闭
+  * 如果想定值删除`hash.erase(key)`
+  * 哈希表是无序的，所以迭代器删除似乎不能定向删除
