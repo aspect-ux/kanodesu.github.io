@@ -25,10 +25,13 @@ v.clear();			//清空
 
 
 //交换两个容器的全部数据
-v1.swap(v2)
+v1.swap(v2);
+//单纯交换
+swap(v[i],v[j]);
     
 //排序
 sort(v.begin(),v.end());
+sort(v.rbegin(),v.rend());
 
 
 //插入
