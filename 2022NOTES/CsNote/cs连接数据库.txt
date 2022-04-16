@@ -1,0 +1,25 @@
+systemctl status mssql-server
+
+1.创建连接字符串    高级-复制
+string constr ="";
+2.创建连接对象
+sqlconnection conn = new sqlconnection(constr);
+3.sql语句
+string sql ="select * from student";                            //一般改sql和cmd操作函数
+4.创建sql语句命令对象
+sqlcommand cmd = new sqlcommand(sql,conn);  //传两个参数
+5.打开数据库连接
+conn.open();
+6.执行sql
+cmd.executenonquery();  //增删改 nonquery        收影响的函数 
+cmd.executereader();       //查询单个结果,这个及下个都可用来查
+cmd.executescalar();        // 
+int count = (int)cmd.executescalar() //默认返回object 一共有多少记录
+7.关闭
+conn.close();
+conn.dispose();
+
+
+
+//以上为基本流程
+
