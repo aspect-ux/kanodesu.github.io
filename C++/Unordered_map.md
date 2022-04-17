@@ -33,7 +33,8 @@
 * 遍历
 
   * 迭代器遍历
-  * `for(auto c in hash){}`
+  * `for(auto c : hash){}`
+  * `for(auto & [x,y] :hash){}`
   
 * `erase`
 
