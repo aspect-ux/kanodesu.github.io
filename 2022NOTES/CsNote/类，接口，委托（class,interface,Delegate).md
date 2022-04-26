@@ -147,4 +147,4 @@ static int fun(int a)
 
 * class 单继承
 * interface 用于多个子类特殊功能。由于不是所有子类都需要这个功能，就不适合改父类。
-* Delegate,lambda函数，传入参数为函数，也可以添加功能，多用action,func
+* Delegate,lambda函数，传入参数为函数，也可以添加功能，多用action,func,也可以自己定义
