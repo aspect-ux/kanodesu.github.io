@@ -1,21 +1,21 @@
 #include<iostream>
 #include<vector>
+#include<unordered_set>
 using namespace std;
 //贪心算法求最优解
 class Solution {
 public:
     int jump(vector<int>& nums) {
-        int maxPos = 0, n = nums.size(), end = 0, step = 0;
-        for (int i = 0; i < n - 1; ++i) {
-            if (maxPos >= i) {
-                maxPos = max(maxPos, i + nums[i]);
-                if (i == end) {
-                    end = maxPos;
-                    ++step;
-                }
-            }
+        int ans = 0,maxd = 0,tmpEnd = nums[0];
+        for(int i = 0;i < nums.size(); i++){
+            if(i == nums.size() - 1) return ans;
+            maxd =max(nums[i] + i,maxd);
+            if(i == tmpEnd){
+                ans++;
+                tmpEnd = maxd;
+            } 
         }
-        return step;
+        return ans;
     }
 };
 /*
@@ -45,10 +45,8 @@ public:  //递归
 };*/
 int main(){
     Solution s;
-    vector<int> nums={0};
+    vector<int> nums={5,9,3,2,1,0,2,3,3,1,0,0};
     cout<<s.jump(nums);
-
-
     system("pause:");
     return 0;
 }
