@@ -42,7 +42,7 @@
 联想f12
 ```
 
-
+[(保姆式教学) Win10 + Ubuntu 20.04——双系统安装方法 + 配置显卡 + root权限 + flash调配_强秦的沉默烤羊的博客-CSDN博客_ubuntu系统](https://blog.csdn.net/codeHonghu/article/details/111940656)
 
 ⑥关闭bitlockers
 
