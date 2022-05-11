@@ -1,0 +1,5 @@
+程序包console 
+Scaffold-DbContext “Data Source=linnoCen;Initial Catalog=InfoUser;User ID=sa;Password=3712466ZLCjyajy!;MultipleActiveResultSets=true;” Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+Add-Migration InitialCreate -Context testDBContext（当有多个dbcontext时声明）
+Update-Database (-Context...)
+
