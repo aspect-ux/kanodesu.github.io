@@ -36,6 +36,11 @@ sort(v.rbegin(),v.rend());
 
 //插入
 v.insert(v.begin()+n,value);
+//将一个vector接到另一个vector后面
+std::vector<int> src;
+std::vector<int> dest;
+dest.insert(dest.end(), src.begin(), src.end());
+
 
 ```
 
