@@ -18,7 +18,7 @@ v.size();
 
 //删除  不会减小容量 size变
 vector<T>:: iterator it; //迭代器删除
-v.erase(pos);    //it
+v.erase(pos);    //it，如果是it，it会变成野指针
 v.erase(begin(),end());
 v.remove(ElemType); //  不会改变size
 v.clear();			//清空
@@ -41,6 +41,11 @@ std::vector<int> src;
 std::vector<int> dest;
 dest.insert(dest.end(), src.begin(), src.end());
 
+
+//查找
+#include<algorithm>
+vector<int> v;
+v.find(v.begin(),v.end(),value);
 
 ```
 
