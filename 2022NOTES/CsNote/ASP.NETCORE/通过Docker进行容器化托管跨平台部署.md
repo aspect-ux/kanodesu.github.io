@@ -32,6 +32,12 @@
 
 `docker rm 容器id`删除
 
+`docker prune -a`清空镜像 （悬空，包括容器）
+
+`docker rm $(docker ps -a -q)`删除所有停止的容器（实例）
+
+`docker rmi $(docker images -q)`删除所有镜像
+
 vs下载docker扩展
 
 
@@ -111,6 +117,10 @@ ENTRYPOINT ["dotnet", "testweb.dll"]
 
 构建镜像
 
+
+
+要注意进入项目目录,dockerfile 也在其中
+
 `docker build -t  mydockertest.`后面有点号,小写
 
 Error parsing reference: "mcr.microsoft.com/dotnet/aspnet:3.1 AS base" is not a valid repository/tag: invalid reference format
@@ -158,3 +168,47 @@ docker run -d -p 8083:80 --name dotapicontainer2(容器) dotapidockertest(image)
       </environmentVariables>
     </aspNetCore>
 ```
+
+
+
+
+
+
+
+
+
+#### 改正
+
+```dockerfile
+#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
+//采用vs自动生成的，但是要改一些东西
+FROM mcr.microsoft.com/dotnet/aspnet:3.1 AS base
+WORKDIR /app
+EXPOSE 80
+
+FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
+WORKDIR /src
+COPY ["./testweb.csproj", "testweb/"] #testweb改成了点号，bug。。
+RUN dotnet restore "testweb/testweb.csproj"
+COPY . testweb/  #反过来将点号改为testweb/
+WORKDIR "/src/testweb"
+RUN dotnet build "testweb.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "testweb.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "testweb.dll"]
+```
+
+```dockerfile
+FROM mcr.microsoft.com/dotnet/aspnet:3.1 
+FROM mcr.microsoft.com/dotnet/sdk:3.1
+EXPOSE 80
+WORKDIR /app
+COPY . /app
+ENTRYPOINT ["dotnet", "testweb.dll"]
+```
+
