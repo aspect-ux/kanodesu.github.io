@@ -1,31 +1,34 @@
 #include<iostream>
 #include<string>
 #include<unordered_map>
+#include<vector>
 using namespace std;
 class Solution {
-private:
-     string s;
 public:
     string countAndSay(int n) {
-        if(n == 1) {
-            s.push_back('1');
-            return s;
-        }
-        s = countAndSay(n-1);
-         string ans;
-         char temp = s[0];
-         int t = 0;
-        for(int i = 0;i < s.length(); i++){
-            if(temp != s[i]) {
-                ans.push_back((char)t);
-                ans.push_back(temp);
-                temp = s[i];
-                t = 1;
+        int cnt = 1,j;
+        string s ="1";
+        for(int i = 1;i < n; i++){
+            string next = "";
+            j = 0;
+            while(j < s.length() - 1){
+                if(s[j] == s[j+1]){
+                    cnt++;
+                }
+                else {
+                    next += to_string(cnt);
+                    next.push_back(s[j]);
+                    cnt = 1; 
+                }
+                j++;
             }
-            else t++;
+            next += to_string(cnt);
+            next.push_back(s[j]);
+            cnt = 1; 
+            cout<<s<<endl;
+            s = next;
         }
-        return ans; 
-
+        return s;
     }
 };
 int main(){
