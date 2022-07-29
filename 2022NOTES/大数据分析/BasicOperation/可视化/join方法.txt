@@ -1,1 +1,0 @@
-string.join(list) #列表元组的话，用string做分隔符 #字典的话，可以把key连接成字符串，分隔符为string

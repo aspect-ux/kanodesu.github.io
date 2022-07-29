@@ -27,7 +27,7 @@
 * `find`
 
   ```c++
-  if(hash.find(index)!= hash.end()) //找到
+  if(hash.find(key)!= hash.end()) //找到
   ```
 
 * 遍历
