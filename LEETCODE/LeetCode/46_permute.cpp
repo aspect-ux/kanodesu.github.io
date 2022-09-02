@@ -57,19 +57,50 @@ public:
         return res;
     }
 };*/
+// class Solution {
+// public:
+//     vector<vector<int>> permute(vector<int>& nums) {
+//         vector<vector<int>> v;
+//         sort(nums.begin(),nums.end());
+//         do{
+//             v.push_back(nums);
+//         }while(next_permutation(nums.begin(),nums.end()));
+//         return v;
+
+//     }
+// };
+//由此可以带来思路，即 1,2,3,4
+
+
 class Solution {
 public:
+    vector<int> res;
+    vector<int> status;
+    void dfs(vector<vector<int>>& ans,vector<int>& nums){
+
+        if(res.size()==nums.size()){
+            ans.push_back(res);
+            return;
+        }
+        for(int i = 0;i < nums.size();i++){
+            if(!status[i]){
+                status[i] = true;
+                res.push_back(nums[i]);
+                dfs(ans,nums);
+                res.pop_back();
+                status[i] = false;
+            }
+            
+        }
+    }
     vector<vector<int>> permute(vector<int>& nums) {
-        vector<vector<int>> v;
-        sort(nums.begin(),nums.end());
-        do{
-            v.push_back(nums);
-        }while(next_permutation(nums.begin(),nums.end()));
-        return v;
+        vector<vector<int>> ans;
+        status.resize(nums.size(),false);
+        dfs(ans,nums);
+        return ans;
 
     }
 };
-//由此可以带来思路，即 1,2,3,4
 
 
 
