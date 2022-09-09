@@ -18,9 +18,16 @@ v.size();
 
 //删除  不会减小容量 size变
 vector<T>:: iterator it; //迭代器删除
+
 v.erase(pos);    //it，如果是it，it会变成野指针
 v.erase(begin(),end());
+//stl是通过把vector中要删除位置后面的所有数据移动到要删除的位置，然后删除最后一个位置的数据来实现的
+
 v.remove(ElemType); //  不会改变size
+v.remove(v.begin(),v.end(),value);
+//删除容器中所有和指定元素值相等的元素，并返回指向最后一个元素下一个位置的迭代器。值得一提的是，调用该函数不会改变容器的大小和容量。
+
+
 v.clear();			//清空
 
 
