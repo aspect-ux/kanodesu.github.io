@@ -21,4 +21,8 @@ do{
   //也要求先排序才能用不然结果不对
   ```
 
+* 累加
+
+  `std::accumulate(v.begin(),v.end(),startValue);`
+
   
