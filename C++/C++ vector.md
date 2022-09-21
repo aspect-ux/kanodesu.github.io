@@ -54,5 +54,8 @@ dest.insert(dest.end(), src.begin(), src.end());
 vector<int> v;
 v.find(v.begin(),v.end(),value);
 
+//获取最大值
+int a = *max_element(v.begin(),v.end());
+
 ```
 
