@@ -1,0 +1,9 @@
+
+#只上传lc代码
+*.vscode
+
+bluebridge/
+
+dataStructure/
+
+Project/
