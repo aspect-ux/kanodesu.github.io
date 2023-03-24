@@ -27,3 +27,14 @@ s.length();     //区别vector 返回长度
 reverse(s.begin(),s.end()); //逆转
 ```
 
+## 字符串转换
+
+`#include <string>`
+
+`stoi` string to int
+
+`stol` string to long 
+
+`stoul` string to unsigned long
+
+其他类推

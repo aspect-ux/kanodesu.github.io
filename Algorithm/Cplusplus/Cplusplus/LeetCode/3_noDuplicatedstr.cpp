@@ -45,6 +45,6 @@ int main(){
     string a ="abcabcbb";
     cout<<s.lengthOfLongestSubstring(a);
    
-    system("pause:");
+    //system("pause:");
     return 0;
 }
