@@ -40,6 +40,10 @@ tests #测试源代码
 4. 链接器（对`windows *.obj,linux *.o`)将目标文件和其他头文件库文件链接成可执行文件
 
    `gcc test1.o test2.o test3.o -o main`
+   
+   -g支持调试信息
+   
+   g++ -g test.cc -o test
 
 最后生成可执行文件
 
@@ -50,6 +54,8 @@ tests #测试源代码
 `gcc/g++ test.o -o main`
 
 或者 `gcc/g++ test.cxx -o test` 直接生成
+
+[一文教你快速上手GDB程序调试 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/196763202)
 
 #### makefile
 
@@ -269,7 +275,13 @@ Logger日志器
 
 ### 日志系统整合配置系统
 
+## 线程模块
 
+使用c++11的线程，互斥量使用pthread
+
+协程在线程上跑
+
+这里更多用协程
 
 # 参考链接
 
